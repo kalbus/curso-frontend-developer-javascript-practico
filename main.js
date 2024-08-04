@@ -3,14 +3,14 @@ const desktopMenu = document.querySelector('.desktop-menu');
 const burgerMenu = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 const carMenu = document.querySelector('.navbar-shopping-cart');
-const asideMyOrder = document.querySelector('.product-detail');
+const asideMyOrder = document.querySelector('.product-detail-list');
 const cardsContainer = document.querySelector('.cards-container');
-
+const productDetail = document.querySelector('.product-detail');
+const productCard = document.querySelector('.product-card');
 // Si hace click en el menu del email, hacer toggle del desktop menu
 emailMenu.addEventListener('click', toggleMenu); 
 burgerMenu.addEventListener('click', toggleMobileMenu);
 carMenu.addEventListener('click', toggleasideMyOrder);
-
 
 function toggleMenu() {
    isasideMyOrderActive = !asideMyOrder.classList.contains('inactive');
@@ -47,10 +47,14 @@ function toggleasideMyOrder() {
     asideMyOrder.classList.toggle('inactive');
 }
 
+function toggleProductDetail() {
+    productDetail.classList.toggle('inactive');
+}
+
 /*
 <div class="product-card">
         <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
-        <div class="product-info">
+        <div class="product-info-card">
           <div>
             <p>$120,00</p>
             <p>Bike</p>
@@ -108,7 +112,7 @@ function showProducts (list) {
         
         /*Product Info: Details and figure */
         const productInfo = document.createElement('div');
-        productInfo.classList.add('product-info');
+        productInfo.classList.add('product-info-card');
 
         /*Details*/
         const details = document.createElement('div');
@@ -134,6 +138,8 @@ function showProducts (list) {
         productCard.appendChild(productInfo);
 
         cardsContainer.appendChild(productCard);
+
+        productCard.addEventListener('click', toggleProductDetail);
     }
 }
 
