@@ -16,8 +16,8 @@ productDetailCloseIcon.addEventListener('click', closeProductDetail);
 
 // Toggle con if
 function toggleMenu() {
-   isasideMyOrderActive = !asideMyOrder.classList.contains('inactive');
-   isProductDetailActive = !productDetail.classList.contains('inactive');
+   const isasideMyOrderActive = !asideMyOrder.classList.contains('inactive');
+   const isProductDetailActive = !productDetail.classList.contains('inactive');
 
    if (isasideMyOrderActive) {
     asideMyOrder.classList.add('inactive');
@@ -32,8 +32,8 @@ function toggleMenu() {
 
 // Toggle con if
 function toggleMobileMenu() {
-    isasideMyOrderActive = !asideMyOrder.classList.contains('inactive');
-    isProductDetailActive = !productDetail.classList.contains('inactive');
+    const isasideMyOrderActive = !asideMyOrder.classList.contains('inactive');
+    const isProductDetailActive = !productDetail.classList.contains('inactive');
 
     if (isasideMyOrderActive) {
         asideMyOrder.classList.add('inactive');
